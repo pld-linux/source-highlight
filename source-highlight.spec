@@ -1,7 +1,7 @@
 Summary:	GNU Source Highlight
 Summary(pl):	Pod¶wietlanie sk³adni z projektu GNU
 Name:		source-highlight
-Version:	1.3
+Version:	1.4
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
@@ -17,8 +17,9 @@ At the moment this package can handle:
 
    * Java,
    * C/C++,
-   * Prolog, new
-   * Perl new
+   * Prolog,
+   * Perl,
+   * PHP3 new
 
 as source languages, and HTML as output format.
 
