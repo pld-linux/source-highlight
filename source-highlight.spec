@@ -48,5 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/*.css
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*.1.gz
+%{_mandir}/man1/*.1*
 %{_datadir}/source-highlight/*.j2h
