@@ -1,12 +1,13 @@
 Summary:	GNU Source Highlight
 Summary(pl):	Pod¶wietlanie sk³adni z projektu GNU
 Name:		source-highlight
-Version:	1.7
+Version:	1.11
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Source0:	ftp://ftp.gnu.org/gnu/source-highlight/%{name}-%{version}.tar.gz
-# Source0-md5:	922a4543490691affde8fe8c3826a033
+Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
+# Source0-md5:	4d044e7fb4593e9214f64bedad42ea09
+URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -16,18 +17,55 @@ highlighting.
 
 At the moment this package can handle:
 
-   * Java,
-   * C/C++,
-   * Prolog,
-   * Perl,
-   * PHP3 new
+- Java
+- Javascript
+- C/C++
+- Prolog
+- Perl
+- Php3
+- Python
+- Flex
+- ChangeLog
+- Ruby
+- Lua
+- Caml
+- Sml
+- Log
 
-as source languages, and HTML as output format.
+as source languages, and
+
+- HTML
+- XHTML
+- ANSI color escape sequences (you can use this feature with less)
+
+as output formats.
 
 %description -l pl
 Ten program z pliku ¼ród³owego tworzy dokument z pod¶wietlon±
-sk³adni±. Aktualnie obs³ugiwane jêzyki ¼ród³owe to Java, C/C++, Prolog
-i Perl; wynik jest w HTML.
+sk³adni±.
+
+Aktualnie obs³ugiwane jêzyki ¼ród³owe to:
+
+- Java
+- Javascript
+- C/C++
+- Prolog
+- Perl
+- Php3
+- Python
+- Flex
+- ChangeLog
+- Ruby
+- Lua
+- Caml
+- Sml
+- Log
+
+a wynikiem mo¿e byæ:
+
+- HTML
+- XHTML
+- kolorowa sekwencja ANSI
 
 %prep
 %setup -q
