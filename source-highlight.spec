@@ -1,5 +1,5 @@
 Summary:	GNU Source Highlight
-Summary(pl):	GNU Source Highlight
+Summary(pl):	Pod¶wietlanie sk³adni z projektu GNU
 Name:		source-highlight
 Version:	1.3
 Release:	1
@@ -13,7 +13,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This program, given a source file, produces a document with syntax
 highlighting.
 
-At the moment this package can handle
+At the moment this package can handle:
 
    * Java,
    * C/C++,
@@ -21,6 +21,11 @@ At the moment this package can handle
    * Perl new
 
 as source languages, and HTML as output format.
+
+%description -l pl
+Ten program z pliku ¼ród³owego tworzy dokument z pod¶wietlon±
+sk³adni±. Aktualnie obs³ugiwane jêzyki ¼ród³owe to Java, C/C++, Prolog
+i Perl; wynik jest w HTML.
 
 %prep
 %setup -q
