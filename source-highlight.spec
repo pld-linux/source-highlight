@@ -1,7 +1,7 @@
 Summary:	GNU Source Highlight
 Summary(pl):	Pod¶wietlanie sk³adni z projektu GNU
 Name:		source-highlight
-Version:	1.6.3rc
+Version:	1.7
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
