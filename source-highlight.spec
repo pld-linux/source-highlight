@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/source-highlight/%{name}-%{version}.tar.gz
+# Source0-md5:	922a4543490691affde8fe8c3826a033
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
