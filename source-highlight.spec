@@ -78,7 +78,8 @@ a wynikiem mo¿e byæ:
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	 DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -88,4 +89,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/*.css
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*.1*
-%{_datadir}/source-highlight/*.j2h
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*.j2h
