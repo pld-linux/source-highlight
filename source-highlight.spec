@@ -1,13 +1,17 @@
 Summary:	GNU Source Highlight
 Summary(pl):	Pod¶wietlanie sk³adni z projektu GNU
 Name:		source-highlight
-Version:	1.11
+Version:	2.0
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	4d044e7fb4593e9214f64bedad42ea09
+# Source0-md5:	7501da9ee6f5eba1c9bc9adac9baae18
 URL:		http://www.gnu.org/software/src-highlite/
+BuildRequires:	automake
+BuildRequires:	bison
+BuildRequires:	boost-regex-devel
+BuildRequires:	flex
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,7 +75,8 @@ a wynikiem mo¿e byæ:
 %setup -q
 
 %build
-%configure2_13
+cp -f /usr/share/automake/config.sub .
+%configure
 %{__make}
 
 %install
@@ -81,13 +86,20 @@ install -d $RPM_BUILD_ROOT
 %{__make} install \
 	 DESTDIR=$RPM_BUILD_ROOT
 
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/*.css
+%doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/{*.css,*.html,*.java}
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*.1*
 %dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*.j2h
+%{_datadir}/%{name}/*
+%{_infodir}/source-highlight.info*
