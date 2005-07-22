@@ -81,8 +81,7 @@ cp -f /usr/share/automake/config.sub .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT \
-	$RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
