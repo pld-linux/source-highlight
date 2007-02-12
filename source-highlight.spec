@@ -1,5 +1,5 @@
 Summary:	GNU Source Highlight
-Summary(pl):	Pod¶wietlanie sk³adni z projektu GNU
+Summary(pl.UTF-8):   PodÅ›wietlanie skÅ‚adni z projektu GNU
 Name:		source-highlight
 Version:	2.5
 Release:	1
@@ -44,11 +44,11 @@ as source languages, and
 
 as output formats.
 
-%description -l pl
-Ten program z pliku ¼ród³owego tworzy dokument z pod¶wietlon±
-sk³adni±.
+%description -l pl.UTF-8
+Ten program z pliku ÅºrÃ³dÅ‚owego tworzy dokument z podÅ›wietlonÄ…
+skÅ‚adniÄ….
 
-Aktualnie obs³ugiwane jêzyki ¼ród³owe to:
+Aktualnie obsÅ‚ugiwane jÄ™zyki ÅºrÃ³dÅ‚owe to:
 
 - Java
 - Javascript
@@ -65,7 +65,7 @@ Aktualnie obs³ugiwane jêzyki ¼ród³owe to:
 - Sml
 - Log
 
-a wynikiem mo¿e byæ:
+a wynikiem moÅ¼e byÄ‡:
 
 - HTML
 - XHTML
