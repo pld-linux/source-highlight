@@ -1,5 +1,5 @@
 Summary:	GNU Source Highlight
-Summary(pl.UTF-8):   Podświetlanie składni z projektu GNU
+Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
 Version:	2.5
 Release:	1
