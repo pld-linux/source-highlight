@@ -1,12 +1,12 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	2.5
+Version:	2.6
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	1d0b3d821e6102b24b2bff8a305ee8b5
+# Source0-md5:	f36f813a0e5e2a55e9f8050a65dbc594
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
 BuildRequires:	bison
