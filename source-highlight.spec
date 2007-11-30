@@ -1,18 +1,20 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	2.6
-Release:	3
-License:	GPL
+Version:	2.8
+Release:	1
+License:	GPL v3+
 Group:		Applications/Publishing
-Source0:	ftp://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	f36f813a0e5e2a55e9f8050a65dbc594
+Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
+# Source0-md5:	688174713b45509dbb840c65e57bb477
+Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	boost-regex-devel
 BuildRequires:	flex
 BuildRequires:	libstdc++-devel
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -73,6 +75,7 @@ a wynikiem może być:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
@@ -100,8 +103,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/{*.css,*.html,*.java}
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*.1*
+%attr(755,root,root) %{_bindir}/check-regexp
+%attr(755,root,root) %{_bindir}/cpp2html
+%attr(755,root,root) %{_bindir}/java2html
+%attr(755,root,root) %{_bindir}/source-highlight
+%attr(755,root,root) %{_bindir}/src-hilite-lesspipe.sh
+%{_mandir}/man1/source-highlight.1*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
 %{_infodir}/source-highlight.info*
