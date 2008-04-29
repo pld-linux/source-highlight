@@ -11,7 +11,7 @@ Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	boost-regex-devel
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	flex
 BuildRequires:	libstdc++-devel
 BuildRequires:	texinfo
