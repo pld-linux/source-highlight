@@ -1,12 +1,12 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	2.9
-Release:	2
+Version:	2.10
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	80a947681d32b0fe515a5cd01f9582a7
+# Source0-md5:	03e9cf03580873b76ca0a89f0468b146
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
@@ -108,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/java2html
 %attr(755,root,root) %{_bindir}/source-highlight
 %attr(755,root,root) %{_bindir}/src-hilite-lesspipe.sh
+%{_mandir}/man1/check-regexp.1*
 %{_mandir}/man1/source-highlight.1*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
