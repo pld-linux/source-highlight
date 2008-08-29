@@ -2,7 +2,7 @@ Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
 Version:	2.10
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -11,7 +11,7 @@ Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	boost-devel >= 1.35.0
+BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	flex
 BuildRequires:	libstdc++-devel
 BuildRequires:	texinfo
