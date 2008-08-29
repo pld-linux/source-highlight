@@ -2,12 +2,13 @@ Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
 Version:	2.10
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 # Source0-md5:	03e9cf03580873b76ca0a89f0468b146
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-am.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
 BuildRequires:	bison
@@ -76,6 +77,7 @@ a wynikiem może być:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
