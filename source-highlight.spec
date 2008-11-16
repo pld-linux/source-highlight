@@ -1,12 +1,12 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	2.10
-Release:	5
+Version:	2.11
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	03e9cf03580873b76ca0a89f0468b146
+# Source0-md5:	084559d7473802b0e5838585cebf42e3
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-am.patch
 URL:		http://www.gnu.org/software/src-highlite/
