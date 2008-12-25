@@ -1,12 +1,12 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	2.11
+Version:	2.11.1
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	084559d7473802b0e5838585cebf42e3
+# Source0-md5:	f6e332317413f247ce248c52df0ddade
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-am.patch
 URL:		http://www.gnu.org/software/src-highlite/
@@ -24,26 +24,58 @@ highlighting.
 
 At the moment this package can handle:
 
+- Ada (new)
+- Autoconf files
+- C/C++
+- C#
+- Bib
+- Bison
+- Caml
+- Changelog
+- Css
+- Diff
+- Flex
+- Fortran
+- GLSL
+- Haxe
+- Html
+- ini files
 - Java
 - Javascript
-- C/C++
-- Prolog
-- Perl
-- Php3
-- Python
-- Flex
-- ChangeLog
-- Ruby
+- KDE desktop files
+- Latex
+- Ldap files
+- Logtalk
+- Log files
+- lsm files (Linux Software Map)
 - Lua
-- Caml
-- Sml
-- Log
+- Makefile
+- M4
+- ML
+- Pascal
+- Perl
+- PHP
+- Postscript
+- Prolog
+- Properties files
+- Python
+- RPM Spec files
+- Ruby
+- Scala     (new)
+- Shell
+- S-Lang
+- Sql
+- Tcl
+- XML
+- XOrg conf files     (new)
 
 as source languages, and
-
 - HTML
 - XHTML
-- ANSI color escape sequences (you can use this feature with less)
+- ANSI color escape sequences
+- LaTeX
+- Texinfo
+- DocBook
 
 as output formats.
 
@@ -53,26 +85,71 @@ składnią.
 
 Aktualnie obsługiwane języki źródłowe to:
 
+- Ada (nowość)
+- Autoconf files
+- C/C++
+- C#
+- Bib
+- Bison
+- Caml
+- Changelog
+- Css
+- Diff
+- Flex
+- Fortran
+- GLSL
+- Haxe
+- Html
+- ini files
 - Java
 - Javascript
-- C/C++
-- Prolog
-- Perl
-- Php3
-- Python
-- Flex
-- ChangeLog
-- Ruby
+- KDE desktop files
+- Latex
+- Ldap files
+- Logtalk
+- Log files
+- lsm files (Linux Software Map)
 - Lua
-- Caml
-- Sml
-- Log
+- Makefile
+- M4
+- ML
+- Pascal
+- Perl
+- PHP
+- Postscript
+- Prolog
+- Properties files
+- Python
+- RPM Spec files
+- Ruby
+- Scala     (nowość)
+- Shell
+- S-Lang
+- Sql
+- Tcl
+- XML
+- XOrg conf files     (nowość)
 
 a wynikiem może być:
 
 - HTML
 - XHTML
-- kolorowa sekwencja ANSI
+- ANSI color escape sequences
+- LaTeX
+- Texinfo
+- DocBook
+
+%package -n bash-completion-source-highlight
+Summary:	bash-completion for source-higlight
+Summary(pl.UTF-8):	bashowe uzupełnianie nazw dla pakietu source-highlight
+Group:		Applications/Shells
+Requires:	bash-completion
+
+%description -n bash-completion-source-highlight
+This package provides bash-completion for source-highlight.
+
+%description -n bash-completion-source-highlight -l pl.UTF-8
+Pakiet ten dostarcza bashowe uzupełnianie nazw dla pakiet source-highlight.
 
 %prep
 %setup -q
@@ -115,3 +192,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
 %{_infodir}/source-highlight.info*
+
+%files -n bash-completion-source-highlight
+%defattr(644,root,root,755)
+%{_sysconfdir}/bash_completion.d/*
