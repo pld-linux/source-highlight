@@ -1,28 +1,30 @@
 /usr/include/boost contains regex.h and regex.hpp.
 don't try to regen/touch anything in /usr/include basing on timestamps.
 
---- source-highlight-2.10/src/lib/Makefile.am.orig	2008-06-05 20:33:03.000000000 +0200
-+++ source-highlight-2.10/src/lib/Makefile.am	2008-08-29 22:20:20.000000000 +0200
-@@ -15,10 +15,7 @@
+--- source-highlight-2.11.1/lib/srchilite/Makefile.am~	2008-11-24 11:16:00.000000000 +0100
++++ source-highlight-2.11.1/lib/srchilite/Makefile.am	2008-12-25 17:02:15.000000000 +0100
+@@ -13,12 +13,7 @@
  .text.c:
  	$(TXTC) -c $<
  
 -if NO_DOUBLECPP
--.h.hpp:
--	touch $@
+-
+-SUFFIXES = .text
+-
 -else
+-
 +ifndef NO_DOUBLECPP
- .h.hpp:
- 	$(DOUBLECPP) --output-source-ext cc --invade-target --input-header-ext h --output-header-ext hpp --output-source-suff=_dbtab --verbose --assume-virtual -i $<
- 	touch $@
---- source-highlight-2.10/src/lib/Makefile.in.orig	2008-07-13 16:07:01.000000000 +0200
-+++ source-highlight-2.10/src/lib/Makefile.in	2008-08-29 22:20:45.000000000 +0200
-@@ -925,8 +925,6 @@
- .text.c:
- 	$(TXTC) -c $<
+ SUFFIXES = .text .hpp .h
  
--@NO_DOUBLECPP_TRUE@.h.hpp:
--@NO_DOUBLECPP_TRUE@	touch $@
- @NO_DOUBLECPP_FALSE@.h.hpp:
- @NO_DOUBLECPP_FALSE@	$(DOUBLECPP) --output-source-ext cc --invade-target --input-header-ext h --output-header-ext hpp --output-source-suff=_dbtab --verbose --assume-virtual -i $<
- @NO_DOUBLECPP_FALSE@	touch $@
+ .h.hpp:
+--- source-highlight-2.11.1/lib/srchilite/Makefile.in~	2008-12-21 17:58:49.000000000 +0100
++++ source-highlight-2.11.1/lib/srchilite/Makefile.in	2008-12-25 17:02:28.000000000 +0100
+@@ -431,8 +431,6 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = includes
+-@NO_DOUBLECPP_FALSE@SUFFIXES = .text .hpp .h
+-@NO_DOUBLECPP_TRUE@SUFFIXES = .text
+ AM_CPPFLAGS = -I$(top_srcdir)/gl -I$(top_builddir)/gl $(BOOST_CPPFLAGS)
+ AM_LDFLAGS = $(BOOST_LDFLAGS)
+ LDADD = @LEXLIB@ $(top_builddir)/gl/libgnu.la
