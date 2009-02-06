@@ -2,7 +2,7 @@ Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
 Version:	2.11.1
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -158,7 +158,8 @@ Pakiet ten dostarcza bashowe uzupełnianie nazw dla pakiet source-highlight.
 
 %build
 cp -f /usr/share/automake/config.sub .
-%configure
+%configure \
+	--with-boost-libdir=%{_libdir}
 %{__make}
 
 %install
