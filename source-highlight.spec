@@ -1,14 +1,13 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	2.11.1
-Release:	4
+Version:	3.1.2
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	f6e332317413f247ce248c52df0ddade
+# Source0-md5:	ac85fefb72020b5d49a0def91feeba96
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-am.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
 BuildRequires:	bison
@@ -24,19 +23,30 @@ highlighting.
 
 At the moment this package can handle:
 
-- Ada (new)
+- Ada
+- Asm (new)
+- Applescript (new)
+- Awk (new)
 - Autoconf files
-- C/C++
-- C#
+- Bat (new)
 - Bib
 - Bison
+- C/C++
+- C#
+- Clipper (new)
+- Cobol (new)
+- Configuration files (generic)
 - Caml
 - Changelog
 - Css
+- D (new)
 - Diff
+- Erlang (new)
+- errors (compiler output) (new)
 - Flex
 - Fortran
 - GLSL
+- Haskell
 - Haxe
 - Html
 - ini files
@@ -50,10 +60,13 @@ At the moment this package can handle:
 - lsm files (Linux Software Map)
 - Lua
 - Makefile
+- Manifest (new)
 - M4
 - ML
+- Oz
 - Pascal
 - Perl
+- pkg-config files
 - PHP
 - Postscript
 - Prolog
@@ -61,21 +74,25 @@ At the moment this package can handle:
 - Python
 - RPM Spec files
 - Ruby
-- Scala     (new)
+- Scala
 - Shell
 - S-Lang
 - Sql
 - Tcl
+- Texinfo
+- VBscript (new)
 - XML
-- XOrg conf files     (new)
+- XOrg conf files
 
 as source languages, and
+
 - HTML
 - XHTML
 - ANSI color escape sequences
 - LaTeX
 - Texinfo
 - DocBook
+
 
 as output formats.
 
@@ -85,19 +102,30 @@ składnią.
 
 Aktualnie obsługiwane języki źródłowe to:
 
-- Ada (nowość)
+- Ada
+- Asm (nowość)
+- Applescript (nowość)
+- Awk (nowość)
 - Autoconf files
-- C/C++
-- C#
+- Bat (nowość)
 - Bib
 - Bison
+- C/C++
+- C#
+- Clipper (nowość)
+- Cobol (nowość)
+- Configuration files (generic)
 - Caml
 - Changelog
 - Css
+- D (nowość)
 - Diff
+- Erlang (nowość)
+- errors (compiler output) (nowość)
 - Flex
 - Fortran
 - GLSL
+- Haskell
 - Haxe
 - Html
 - ini files
@@ -111,10 +139,13 @@ Aktualnie obsługiwane języki źródłowe to:
 - lsm files (Linux Software Map)
 - Lua
 - Makefile
+- Manifest (nowość)
 - M4
 - ML
+- Oz
 - Pascal
 - Perl
+- pkg-config files
 - PHP
 - Postscript
 - Prolog
@@ -122,13 +153,15 @@ Aktualnie obsługiwane języki źródłowe to:
 - Python
 - RPM Spec files
 - Ruby
-- Scala     (nowość)
+- Scala
 - Shell
 - S-Lang
 - Sql
 - Tcl
+- Texinfo
+- VBscript (nowość)
 - XML
-- XOrg conf files     (nowość)
+- XOrg conf files
 
 a wynikiem może być:
 
@@ -138,6 +171,41 @@ a wynikiem może być:
 - LaTeX
 - Texinfo
 - DocBook
+
+%package devel
+Summary:	Header file for srchlite library
+Summary(pl.UTF-8):	Plik nagłówkowy biblioteki srchlite
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+Header file for srchlite library.
+
+%description devel -l pl.UTF-8
+Plik nagłówkowy biblioteki srchlite.
+
+%package libs
+Summary:	Source highlight library
+Summary(pl.UTF-8):	Biblioteka podświetlania składni
+Group:		Libraries
+
+%description libs
+Source highlight library.
+
+%description libs -l pl.UTF-8
+Biblioteka podświetlania składni.
+
+%package static
+Summary:	Static source-highlight library
+Summary(pl.UTF-8):	Statyczna biblioteka source-highlight
+Group:		Development/Libraries
+Requires:	%{name}-libs = %{version}-%{release}
+
+%description static
+Statoic source highlight library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka podświetlania składni.
 
 %package -n bash-completion-source-highlight
 Summary:	bash-completion for source-higlight
@@ -149,12 +217,12 @@ Requires:	bash-completion
 This package provides bash-completion for source-highlight.
 
 %description -n bash-completion-source-highlight -l pl.UTF-8
-Pakiet ten dostarcza bashowe uzupełnianie nazw dla pakiet source-highlight.
+Pakiet ten dostarcza bashowe uzupełnianie nazw dla pakiet
+source-highlight.
 
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
@@ -180,6 +248,9 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/{*.css,*.html,*.java}
@@ -187,12 +258,30 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/cpp2html
 %attr(755,root,root) %{_bindir}/java2html
 %attr(755,root,root) %{_bindir}/source-highlight
+%attr(755,root,root) %{_bindir}/source-highlight-settings
 %attr(755,root,root) %{_bindir}/src-hilite-lesspipe.sh
 %{_mandir}/man1/check-regexp.1*
 %{_mandir}/man1/source-highlight.1*
+%{_mandir}/man1/source-highlight-settings.1*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
 %{_infodir}/source-highlight.info*
+%{_infodir}/source-highlight-lib.info*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/srchilite
+%{_pkgconfigdir}/*.pc
+%{_libdir}/libsource-highlight.so
+%{_libdir}/*.la
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libsource-highlight.so.*
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/*.a
 
 %files -n bash-completion-source-highlight
 %defattr(644,root,root,755)
