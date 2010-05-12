@@ -10,7 +10,6 @@ Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
-BuildRequires:	bison
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	flex
 BuildRequires:	libstdc++-devel
