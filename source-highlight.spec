@@ -1,12 +1,12 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	3.1.5
+Version:	3.1.6
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	3117ee47c1c6b0668667e20d2aca3757
+# Source0-md5:	44856c15a5dc8694e30d92f640ed348f
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
@@ -286,4 +286,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n bash-completion-source-highlight
 %defattr(644,root,root,755)
-%{_sysconfdir}/bash_completion.d/source-highlight-bash-completion
+%{_sysconfdir}/bash_completion.d/source-highlight
