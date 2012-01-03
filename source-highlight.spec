@@ -188,6 +188,8 @@ Summary:	Header file for srchlite library
 Summary(pl.UTF-8):	Plik nagłówkowy biblioteki srchlite
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	boost-devel >= 1.36.0
+Requires:	libstdc++-devel
 
 %description devel
 Header file for srchlite library.
