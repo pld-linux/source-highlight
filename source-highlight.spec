@@ -1,12 +1,12 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	3.1.6
-Release:	2
+Version:	3.1.7
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	44856c15a5dc8694e30d92f640ed348f
+# Source0-md5:	0ff81588d3536b4c4e571122ba940595
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	automake
@@ -240,6 +240,7 @@ install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_docdir}/%{name}/* $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libsource-highlight.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -260,6 +261,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/cpp2html
 %attr(755,root,root) %{_bindir}/java2html
 %attr(755,root,root) %{_bindir}/source-highlight
+%attr(755,root,root) %{_bindir}/source-highlight-esc.sh
 %attr(755,root,root) %{_bindir}/source-highlight-settings
 %attr(755,root,root) %{_bindir}/src-hilite-lesspipe.sh
 %{_mandir}/man1/check-regexp.1*
@@ -278,7 +280,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libsource-highlight.so
-%{_libdir}/libsource-highlight.la
 %{_includedir}/srchilite
 %{_pkgconfigdir}/source-highlight.pc
 
