@@ -12,3 +12,23 @@
  @end direntry
  
  @titlepage
+--- source-highlight-3.1.7/doc/comment-show.show.texinfo.orig	2013-07-09 17:49:10.494647001 +0200
++++ source-highlight-3.1.7/doc/comment-show.show.texinfo	2013-07-09 17:50:06.605111340 +0200
+@@ -16,5 +16,4 @@
+   rule (string2) "<<" (exit level: 0, next: 4)
+     STATE 4 default: string2
+       rule (string2) ">>" (exit level: 1, next: 0)
+-
+-@end example
+\ No newline at end of file
++@end example
+--- source-highlight-3.1.7/doc/comment-show2.show.texinfo.orig	2013-07-09 17:49:16.271362496 +0200
++++ source-highlight-3.1.7/doc/comment-show2.show.texinfo	2013-07-09 17:50:10.645144430 +0200
+@@ -13,5 +13,4 @@
+     STATE 3 default: string2
+       rule (string2) ">>" (exit level: 1, next: 0)
+   rule (paren normal paren) "(\[)(.*)(\])" (exit level: 0, next: 0)
+-
+-@end example
+\ No newline at end of file
++@end example

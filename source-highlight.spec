@@ -2,7 +2,7 @@ Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
 Version:	3.1.7
-Release:	3
+Release:	4
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -239,7 +239,9 @@ install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_docdir}/%{name}/* $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+%{__rm} -rf docdir-%{name}-%{version}
+%{__mv} -f $RPM_BUILD_ROOT%{_docdir}/%{name} docdir-%{name}-%{version}
+
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libsource-highlight.la
 
 %clean
@@ -257,6 +259,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/{*.css,*.html,*.java}
+%doc docdir-%{name}-%{version}/*
 %attr(755,root,root) %{_bindir}/check-regexp
 %attr(755,root,root) %{_bindir}/cpp2html
 %attr(755,root,root) %{_bindir}/java2html
