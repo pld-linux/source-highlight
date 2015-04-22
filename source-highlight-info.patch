@@ -1,5 +1,5 @@
---- source-highlight-2.8/doc/source-highlight.texinfo.orig	2007-09-09 16:45:17.000000000 +0200
-+++ source-highlight-2.8/doc/source-highlight.texinfo	2007-11-30 22:37:15.403856539 +0100
+--- source-highlight-3.1.8/doc/source-highlight.texi.orig	2007-09-09 16:45:17.000000000 +0200
++++ source-highlight-3.1.8/doc/source-highlight.texi	2007-11-30 22:37:15.403856539 +0100
 @@ -32,9 +32,9 @@
  @end quotation
  @end copying

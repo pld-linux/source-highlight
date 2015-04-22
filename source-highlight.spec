@@ -1,15 +1,15 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	3.1.7
-Release:	9
+Version:	3.1.8
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	0ff81588d3536b4c4e571122ba940595
+# Source0-md5:	3243470706ef5fefdc3e43b5306a4e41
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
-BuildRequires:	automake
+BuildRequires:	bison
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	flex
 BuildRequires:	libstdc++-devel
@@ -21,156 +21,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This program, given a source file, produces a document with syntax
 highlighting.
 
-At the moment this package can handle:
-
-- Ada
-- Asm (new)
-- Applescript (new)
-- Awk (new)
-- Autoconf files
-- Bat (new)
-- Bib
-- Bison
-- C/C++
-- C#
-- Clipper (new)
-- Cobol (new)
-- Configuration files (generic)
-- Caml
-- Changelog
-- Css
-- D (new)
-- Diff
-- Erlang (new)
-- errors (compiler output) (new)
-- Flex
-- Fortran
-- GLSL
-- Haskell
-- Haxe
-- Html
-- ini files
-- Java
-- Javascript
-- KDE desktop files
-- Latex
-- Ldap files
-- Logtalk
-- Log files
-- lsm files (Linux Software Map)
-- Lua
-- Makefile
-- Manifest (new)
-- M4
-- ML
-- Oz
-- Pascal
-- Perl
-- pkg-config files
-- PHP
-- Postscript
-- Prolog
-- Properties files
-- Python
-- RPM Spec files
-- Ruby
-- Scala
-- Shell
-- S-Lang
-- Sql
-- Tcl
-- Texinfo
-- VBscript (new)
-- XML
-- XOrg conf files
-
-as source languages, and
-
-- HTML
-- XHTML
-- ANSI color escape sequences
-- LaTeX
-- Texinfo
-- DocBook
-
-
-as output formats.
+This package can handle many programming languages, e.g. C/C++, Flex,
+Java, PHP, Perl, Prolog, Python as source languages; and some output
+formats, e.g. HTML, XHTML, LaTeX.
 
 %description -l pl.UTF-8
 Ten program z pliku źródłowego tworzy dokument z podświetloną
 składnią.
 
-Aktualnie obsługiwane języki źródłowe to:
-
-- Ada
-- Asm (nowość)
-- Applescript (nowość)
-- Awk (nowość)
-- Autoconf files
-- Bat (nowość)
-- Bib
-- Bison
-- C/C++
-- C#
-- Clipper (nowość)
-- Cobol (nowość)
-- Configuration files (generic)
-- Caml
-- Changelog
-- Css
-- D (nowość)
-- Diff
-- Erlang (nowość)
-- errors (compiler output) (nowość)
-- Flex
-- Fortran
-- GLSL
-- Haskell
-- Haxe
-- Html
-- ini files
-- Java
-- Javascript
-- KDE desktop files
-- Latex
-- Ldap files
-- Logtalk
-- Log files
-- lsm files (Linux Software Map)
-- Lua
-- Makefile
-- Manifest (nowość)
-- M4
-- ML
-- Oz
-- Pascal
-- Perl
-- pkg-config files
-- PHP
-- Postscript
-- Prolog
-- Properties files
-- Python
-- RPM Spec files
-- Ruby
-- Scala
-- Shell
-- S-Lang
-- Sql
-- Tcl
-- Texinfo
-- VBscript (nowość)
-- XML
-- XOrg conf files
-
-a wynikiem może być:
-
-- HTML
-- XHTML
-- ANSI color escape sequences
-- LaTeX
-- Texinfo
-- DocBook
+Pakiet potrafi obsłużyć wiele języków programowania, np. C/C++, Flex,
+Java, PHP, Perl, Prolog, Python jako języki źródłowe; oraz kilka
+formatów wyjściowych, np. HTML, XHTML, LaTeX.
 
 %package libs
 Summary:	Source highlight library
@@ -227,7 +88,6 @@ source-highlight.
 %patch0 -p1
 
 %build
-cp -f /usr/share/automake/config.sub .
 %configure \
 	--with-boost-libdir=%{_libdir}
 %{__make}
