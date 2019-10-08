@@ -32,3 +32,17 @@
 -@end example
 \ No newline at end of file
 +@end example
+--- source-highlight-3.1.8/doc/source-highlight-lib.texi.orig	2015-03-30 20:11:19.000000000 +0200
++++ source-highlight-3.1.8/doc/source-highlight-lib.texi	2019-10-08 19:39:29.382696925 +0200
+@@ -70,9 +70,9 @@
+ @end quotation
+ @end copying
+ 
+-@dircategory C++ Libraries
++@dircategory Libraries:
+ @direntry
+-* Source-highlight-lib: (source-highlight-lib).  Highlights contents
++* Source-highlight-lib: (source-highlight-lib).	Highlights contents
+ @end direntry
+ 
+ @titlepage

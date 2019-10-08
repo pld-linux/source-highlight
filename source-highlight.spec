@@ -2,7 +2,7 @@ Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
 Version:	3.1.8
-Release:	8
+Release:	9
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
@@ -116,6 +116,12 @@ rm -rf $RPM_BUILD_ROOT
 %post	libs -p /sbin/ldconfig
 %postun	libs -p /sbin/ldconfig
 
+%post	devel -p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
+%postun	devel -p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/{*.css,*.html,*.java}
@@ -130,10 +136,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/check-regexp.1*
 %{_mandir}/man1/source-highlight.1*
 %{_mandir}/man1/source-highlight-settings.1*
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}
 %{_infodir}/source-highlight.info*
-%{_infodir}/source-highlight-lib.info*
 
 %files libs
 %defattr(644,root,root,755)
@@ -145,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libsource-highlight.so
 %{_includedir}/srchilite
 %{_pkgconfigdir}/source-highlight.pc
+%{_infodir}/source-highlight-lib.info*
 
 %files static
 %defattr(644,root,root,755)
