@@ -1,17 +1,18 @@
 Summary:	GNU Source Highlight
 Summary(pl.UTF-8):	Podświetlanie składni z projektu GNU
 Name:		source-highlight
-Version:	3.1.8
-Release:	9
+Version:	3.1.9
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
-Source0:	http://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
-# Source0-md5:	3243470706ef5fefdc3e43b5306a4e41
+Source0:	https://ftp.gnu.org/gnu/src-highlite/%{name}-%{version}.tar.gz
+# Source0-md5:	a51266164a537c97860d5d9664614dec
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/src-highlite/
 BuildRequires:	bison
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	flex
+BuildRequires:	help2man
 BuildRequires:	libstdc++-devel
 BuildRequires:	texinfo
 Requires:	%{name}-libs = %{version}-%{release}
