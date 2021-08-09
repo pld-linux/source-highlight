@@ -89,6 +89,7 @@ source-highlight.
 %patch0 -p1
 
 %build
+export CXXFLAGS="%{rpmcxxflags} -std=c++14"
 %configure \
 	--with-boost-libdir=%{_libdir}
 %{__make}
