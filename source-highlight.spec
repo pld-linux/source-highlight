@@ -101,10 +101,9 @@ install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -rf docdir-%{name}-%{version}
-%{__mv} -f $RPM_BUILD_ROOT%{_docdir}/%{name} docdir-%{name}-%{version}
-
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libsource-highlight.la
+
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -127,7 +126,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO.txt doc/{*.css,*.html,*.java}
-%doc docdir-%{name}-%{version}/*
 %attr(755,root,root) %{_bindir}/check-regexp
 %attr(755,root,root) %{_bindir}/cpp2html
 %attr(755,root,root) %{_bindir}/java2html
