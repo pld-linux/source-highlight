@@ -86,7 +86,7 @@ source-highlight.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 export CXXFLAGS="%{rpmcxxflags} -std=c++14"
