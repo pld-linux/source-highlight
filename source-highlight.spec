@@ -13,7 +13,7 @@ BuildRequires:	bison
 BuildRequires:	boost-devel >= 1.36.0
 BuildRequires:	flex
 BuildRequires:	help2man
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	texinfo
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
